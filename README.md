@@ -1,2 +1,2 @@
 # Labirinto
- Quebra cabeça feito em node.js
+ Pedaços de código e projetos menos relevantes

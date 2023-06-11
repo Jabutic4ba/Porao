@@ -1,0 +1,6 @@
+Há uma porta dentre todas as portas onde há um tesouro.
+
+As portas que não sejam a do tesouro terão dicas de como alcança-la
+
+Quando o jogador encontrar a porta do tesouro ele vence
+
