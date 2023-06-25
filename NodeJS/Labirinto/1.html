@@ -16,21 +16,85 @@
             height: 100px;
 			position: absolute;
 			margin-left: 50px;
+
+
+		}
+
+ 	     #lStick{
+ 	     	position: absolute;
+ 	     	
+ 	     	background: url("leverOnly.png") no-repeat center;
+ 	     	height: 120px;
+ 	     	width: 30px;
+ 	     	margin-top: 10px;
+ 	     	margin-left: 60px;
+
+ 	     }
+		 #lStick:hover{
+		 	cursor: pointer;
+		 	background: url("leverhover.png") no-repeat center;
+		 }
+
+		h1{
+			font-size: 240px;
+
+			position: absolute;
+		}
+		.upperh{
+			margin-top: -250px;
+			margin-left: 10px;
 			opacity: 0.5;
 		}
-		 .lever:hover{
-		 	cursor: pointer;
-		 			 }
+		.lowerh{
+			margin-top: -15px;
+			margin-left: 10px;
+			opacity: 0.5;
+		}
 		#leversHolder{
 			margin: auto;
-            margin-top: 300px;
+            margin-top: 345px;
+
 
 		}
 	</style>
 
 	<table id='leversHolder'>
 		<tr>
-			<td ><div class='lever'></div><img src="Lever.png" ></td>
+			<td >
+				<h1 class='upperh'>0</h1>
+				<div class='lever'></div>
+				<div id='lStick'></div>
+				<img src="leverHolder.png" >
+				<h1 class='lowerh'>5</h1>				
+			</td>
+			<td >
+				<h1 class='upperh'>1</h1>
+				<div class='lever'></div>
+				<div id='lStick'></div>
+				<img src="leverHolder.png" >
+				<h1 class='lowerh'>6</h1>				
+			</td>
+			<td >
+				<h1 class='upperh'>2</h1>
+				<div class='lever'></div>
+				<div id='lStick'></div>
+				<img src="leverHolder.png" >
+				<h1 class='lowerh'>7</h1>			
+			</td>
+			<td >
+				<h1 class='upperh'>3</h1>
+				<div class='lever'></div>
+				<div id='lStick'></div>
+				<img src="leverHolder.png" >
+				<h1 class='lowerh'>8</h1>				
+			</td>
+			<td >
+				<h1 class='upperh'>4</h1>
+				<div class='lever'></div>
+				<div id='lStick'></div>
+				<img src="leverHolder.png" >
+				<h1 class='lowerh'>9</h1>				
+			</td>
 		</tr>
 	</table>
 </body>
