@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+   img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+   }
+  </style>
+ </head>
+
+ <body style = "background-color: black">
+  <script type="text/javascript">
+   var changeBlur = setInterval(function(){ blurt() },50);
+   var x = 8;
+   var subindo = false;
+
+   function blurt(){
+    if(x == 0){
+     subindo = true;
+    }
+
+    if(x == 8){
+     subindo = false;
+    }
+
+    if(subindo == false){ 
+     x-=0.25;
+     document.getElementById("blurDiv").style.filter = "blur(" + x + "px)";
+    }
+    if(subindo == true){ 
+     x+=0.25;
+     document.getElementById("blurDiv").style.filter = "blur(" + x + "px)";
+    }
+   }
+
+  </script>
+
+  <img src='bolinha.png' id="blurDiv">
+ </body>
+</html>
