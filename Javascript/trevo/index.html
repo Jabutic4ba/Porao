@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+    .n{height:600px;width:900px;} 
+
+    .tdn{
+     border-radius:50%;
+     border: 3px solid #ca0000;
+     font-size: 40px;
+     font-weight: bold;
+     height: 70px;
+     width: 70px;
+     text-align: center;
+     border: 5px solid #ca0000;
+     background-color:#3366ff;
+     color: #ff9933;
+
+    }
+  
+    .thn{
+     background-color: black; 
+     font-size: 30px;
+     border-radius: 10px;
+     color: #ff9933;
+     font-weight: bold;
+    }
+
+    table{
+     border-spacing: 5px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 15px;
+
+     
+    }
+
+    .thj{background-color: #ca0000; font-size: 30px;border-radius:10px;}
+
+    .tdj{
+     border: 5px solid #ca0000;
+     padding: 25px;
+     background-color:#3366ff;
+     color: #ff9933;
+    }
+
+   
+   div{
+    height: 600px; 
+    width: 600px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+   }
+   
+   img{
+    /* The image used */
+    margin-left: 150px;
+    margin-top: 0px; 
+    height:620px;
+    width: 660px;
+    /* Center and scale the image nicely */
+    display: none;
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+    filter: blur(8px);
+    position: absolute;
+
+   }
+
+   body{background-color: black;}
+   
+   p{
+    color: red; 
+    font-size: 20px; 
+    font-weight: bold;
+    position: absolute;
+   }
+ 
+   p:hover{color:#ff9999;}
+   
+
+
+  td:hover {background-color: #c6d2ea;}
+  </style>
+
+ </head>
+ <body>
+
+
+  <div id="divTable">
+  <table width="100%" height="100%" id="myTable">
+   <th colspan="2" id="perdeu" class="thj">NIVEL 1</th>
+   <tr>
+    <td class="tdj" type="button" onClick="changeColor(1,0)"></td>
+    <td class="tdj" type="button" onClick="changeColor(1,1)"></td>
+   </tr>
+
+   <tr>
+    <td class="tdj" type="button" onClick="changeColor(2,0)"></td>
+    <td class="tdj" type="button" onClick="changeColor(2,1)"></td>
+   </tr>
+
+  </table>
+
+  </div>
+
+  <div id="nivelDois" style="display:none">
+   <table width="100%" height="100%" id="tnivelDois">
+    <th colspan="3" id="perdeuDois" class="thj">NIVEL 2</th>
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(1,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,2)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(2,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,2)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(3,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,2)"></td>
+    </tr>
+
+   </table>
+  </div>
+
+  <div id="nivelTres" style="display:none">
+   <table width="100%" height="100%" id="tnivelTres">
+    <th colspan="4" id="perdeuTres" class="thj">NIVEL 3</th>
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(1,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,3)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(2,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,3)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(3,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,3)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(4,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(4,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(4,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(4,3)"></td>
+    </tr>
+
+   </table>
+  </div>
+
+  <div id="nivelQuatro" style="display:none">
+   <table width="100%" height="100%" id="tnivelQuatro">
+    <th colspan="4" id="perdeuQuatro" class="thj">NIVEL 4</th>
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(1,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(1,3)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(2,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(2,3)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(3,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(3,3)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdj" type="button" onClick="changeColor(4,0)"></td>
+     <td class="tdj" type="button" onClick="changeColor(4,1)"></td>
+     <td class="tdj" type="button" onClick="changeColor(4,2)"></td>
+     <td class="tdj" type="button" onClick="changeColor(4,3)"></td>
+    </tr>
+
+   </table>
+  </div>
+
+  <div id="numeros"  class="n" style="display:none">
+   <p onClick="voltaInicio()">VOLTAR</p>
+   <table width="100%" height="100%" id="tnumeros">
+    <th colspan="10" id="perdeuQuatro" class="thn">NUMEROS DA MEGA SENA</th>
+    <!--Desafio: criar com javascript-->
+    <tr>
+     <td class="tdn" type="button" onClick="revealNumber(1,0)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,1)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,2)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,3)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,4)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,5)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,6)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,7)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,8)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(1,9)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdn" type="button" onClick="revealNumber(2,0)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,1)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,2)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,3)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,4)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,5)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,6)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,7)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,8)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(2,9)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdn" type="button" onClick="revealNumber(3,0)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,1)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,2)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,3)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,4)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,5)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,6)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,7)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,8)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(3,9)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdn" type="button" onClick="revealNumber(4,0)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,1)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,2)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,3)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,4)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,5)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,6)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,7)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,8)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(4,9)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdn" type="button" onClick="revealNumber(5,0)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,1)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,2)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,3)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,4)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,5)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,6)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,7)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,8)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(5,9)"></td>
+    </tr>
+
+    <tr>
+     <td class="tdn" type="button" onClick="revealNumber(6,0)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,1)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,2)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,3)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,4)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,5)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,6)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,7)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,8)"></td>
+     <td class="tdn" type="button" onClick="revealNumber(6,9)"></td>
+    </tr>
+
+
+   </table>
+  </div>
+
+
+  <script type="text/javascript" src="memo.js"></script>
+  <script type="text/javascript" src="utilidades.js"></script>
+  <script type="text/javascript" src="megaSena.js"></script>
+ </body>
+
+</html>
