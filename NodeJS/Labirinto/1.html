@@ -20,19 +20,34 @@
 
 		}
 
- 	     #lStick{
+ 	     .lStick{
  	     	position: absolute;
  	     	
  	     	background: url("leverOnly.png") no-repeat center;
  	     	height: 120px;
  	     	width: 30px;
- 	     	margin-top: 10px;
+ 	     	margin-top: 20px;
  	     	margin-left: 60px;
 
  	     }
-		 #lStick:hover{
+ 	     .lStickDown{
+ 	     	position: absolute;
+ 	     	
+ 	     	background: url("leveronlydown.png") no-repeat center;
+ 	     	height: 120px;
+ 	     	width: 30px;
+ 	     	margin-top: 45px;
+ 	     	margin-left: 62px;
+ 	     	display:none;
+ 	     }
+
+		 .lStick:hover{
 		 	cursor: pointer;
 		 	background: url("leverhover.png") no-repeat center;
+		 }
+		 .lStickDown:hover{
+		 	cursor: pointer;
+		 	background: url("leverhoverdown.png") no-repeat center;
 		 }
 
 		h1{
@@ -63,35 +78,40 @@
 			<td >
 				<h1 class='upperh'>0</h1>
 				<div class='lever'></div>
-				<div id='lStick' onClick='lAction()'></div>
+				<div class='lStick' onClick='lAction(0)'></div>
+				<div class='lStickDown' onClick='lAction(0)'></div>
 				<img src="leverHolder.png" >
 				<h1 class='lowerh'>5</h1>				
 			</td>
 			<td >
 				<h1 class='upperh'>1</h1>
 				<div class='lever'></div>
-				<div id='lStick'></div>
+				<div class='lStick' onClick='lAction(1)'></div>
+				<div class='lStickDown' onClick='lAction(1)'></div>
 				<img src="leverHolder.png" >
 				<h1 class='lowerh'>6</h1>				
 			</td>
 			<td >
 				<h1 class='upperh'>2</h1>
 				<div class='lever'></div>
-				<div id='lStick'></div>
+				<div class='lStick' onClick='lAction(2)'></div>
+				<div class='lStickDown' onClick='lAction(2)'></div>
 				<img src="leverHolder.png" >
 				<h1 class='lowerh'>7</h1>			
 			</td>
 			<td >
 				<h1 class='upperh'>3</h1>
 				<div class='lever'></div>
-				<div id='lStick'></div>
+				<div class='lStick' onClick='lAction(3)'></div>
+				<div class='lStickDown' onClick='lAction(3)'></div>
 				<img src="leverHolder.png" >
 				<h1 class='lowerh'>8</h1>				
 			</td>
 			<td >
 				<h1 class='upperh'>4</h1>
 				<div class='lever'></div>
-				<div id='lStick'></div>
+				<div class='lStick' onClick='lAction(4)'></div>
+				<div class='lStickDown' onClick='lAction(4)'></div>
 				<img src="leverHolder.png" >
 				<h1 class='lowerh'>9</h1>				
 			</td>
