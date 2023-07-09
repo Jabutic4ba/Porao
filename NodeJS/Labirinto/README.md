@@ -1,2 +1,2 @@
 # Labirinto
- Quebra cabeça feito em node.js
+ Quebra cabeça feito com node.js
