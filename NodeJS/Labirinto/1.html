@@ -10,6 +10,7 @@
 	<style type="text/css">
 		body{
 			background-image: url('bg.png');
+
 		}
 		.lever{
             width: 50px;
@@ -58,7 +59,6 @@
 		.upperh{
 			margin-top: -250px;
 			margin-left: 10px;
-			opacity: 1;
 		}
 		.lowerh{
 			margin-top: -15px;
@@ -68,15 +68,33 @@
 		#leversHolder{
 			margin: auto;
             margin-top: 345px;
+		}
 
+		.anim{
+			position: absolute;
+			width: 1%;
+			height: 1%;
 
 		}
-	</style>
 
+		#backg{
+    position:fixed;
+    padding:0;
+    margin:0;
+    /*background-image: url('bg.png');*/
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+		}
+
+	</style>
+	<div id='backg'>
 	<table id='leversHolder'>
 		<tr>
 			<td >
-				<h1 class='upperh'>0</h1>
+				<h1 class='upperh' style="opacity: 1">0</h1>
 				<div class='lever'></div>
 				<div class='lStick' onClick='lAction(0)'></div>
 				<div class='lStickDown' onClick='lAction(0)'></div>
@@ -84,7 +102,7 @@
 				<h1 class='lowerh'>5</h1>				
 			</td>
 			<td >
-				<h1 class='upperh'>1</h1>
+				<h1 class='upperh' style='opacity: 1;'>1</h1>
 				<div class='lever'></div>
 				<div class='lStick' onClick='lAction(1)'></div>
 				<div class='lStickDown' onClick='lAction(1)'></div>
@@ -92,7 +110,7 @@
 				<h1 class='lowerh'>6</h1>				
 			</td>
 			<td >
-				<h1 class='upperh'>2</h1>
+				<h1 class='upperh' style='opacity: 1;'>2</h1>
 				<div class='lever'></div>
 				<div class='lStick' onClick='lAction(2)'></div>
 				<div class='lStickDown' onClick='lAction(2)'></div>
@@ -100,7 +118,7 @@
 				<h1 class='lowerh'>7</h1>			
 			</td>
 			<td >
-				<h1 class='upperh'>3</h1>
+				<h1 class='upperh' style='opacity: 1;'>3</h1>
 				<div class='lever'></div>
 				<div class='lStick' onClick='lAction(3)'></div>
 				<div class='lStickDown' onClick='lAction(3)'></div>
@@ -108,7 +126,7 @@
 				<h1 class='lowerh'>8</h1>				
 			</td>
 			<td >
-				<h1 class='upperh'>4</h1>
+				<h1 class='upperh' style='opacity: 1;'>4</h1>
 				<div class='lever'></div>
 				<div class='lStick' onClick='lAction(4)'></div>
 				<div class='lStickDown' onClick='lAction(4)'></div>
@@ -117,6 +135,9 @@
 			</td>
 		</tr>
 	</table>
+    </div>
+    
+
 
 	<script type="text/javascript" src='1.js'></script>
 </body>
