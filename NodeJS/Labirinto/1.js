@@ -29,7 +29,7 @@ function playAnim(id){
 // setting 'src' actually starts the preload
 	    img_tag.src = "headAnim/headAnim" + i + ".PNG";
 		console.log(i);
-		if(i == 49){clearInterval(p);}
+		if(i == 58){clearInterval(p);}
 	}, 50);
 
 }
