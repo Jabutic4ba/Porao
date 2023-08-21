@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+ <style type="text/css">
+	body, html{
+		height: 100%;
+		margin: 0;
+	}
+
+	*{box-sizing:border-box;}
+
+	.img-magnifier-container{
+		position: relative;
+	}
+
+	.img-magnifier-glass{
+		position: absolute;
+		border: 3px solid #000;
+		border-radius: 50%;
+		cursor: none;
+		width: 100px;
+		height: 100px;
+	}
+
+	#bg{
+
+  /* Full height */
+     height: 100%;
+	 width: 100%;
+
+	}	
+ </style>
+
+ <div class='img-magnifier-container'>
+  <img src='strange.JPG' id='bg'></img>
+ </div>
+  <script type="text/javascript" src='2.js'></script>
+</body>
+</html>

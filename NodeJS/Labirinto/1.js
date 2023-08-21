@@ -1,6 +1,6 @@
 var upperNumbers = document.getElementsByClassName('upperh');
 var lowerNumbers = document.getElementsByClassName('lowerh');
-
+var played = false;
 
 
 
@@ -29,7 +29,7 @@ function playAnim(id){
 // setting 'src' actually starts the preload
 	    img_tag.src = "headAnim/headAnim" + i + ".PNG";
 		console.log(i);
-		if(i == 58){clearInterval(p);}
+		if(i == 58){document.getElementById('key').style.display = 'block';clearInterval(p);}
 	}, 50);
 
 }
@@ -56,8 +56,14 @@ function lAction(index){
 
 		//senha 01739
 		if(upperNumbers[0].style.opacity == 1 && upperNumbers[1].style.opacity == 1 && lowerNumbers[2].style.opacity == 1 && lowerNumbers[4].style.opacity == 1 && upperNumbers[3].style.opacity == 1){
-			playAnim('backg');
+			if(!played){playAnim('backg');played = true;}
+			
 		}
 
 }
 
+function takeKey(){
+	document.getElementById('key').style.display = 'none'
+	document.getElementsByClassName('slots')[0].style.backgroundImage = "url('key.PNG')";
+
+}
