@@ -50,12 +50,22 @@ function magnify(imgID, zoom){
         x = e.pageX - a.left;
         y = e.pageY - a.top;
 
-        diffx = x - 366;
-        diffy = y - 226;
-        var rx = Math.abs(diffx / 48);
-        var ry = Math.abs(diffy / 35);
+        diffx = x - 849;
+        diffy = y - 797;
+        var rx = Math.abs(diffx / 94);
+        var ry = Math.abs(diffy / 88);
         var i = Math.round((rx+ry)/2);
-        document.getElementById('bg').src = 'strangeAnim/strangeanim' + i + '.PNG';
+
+        if(i<8){
+        	document.getElementById('bg').src = 'strangeAnim/strangeanim' + i + '.PNG';
+        }
+        else{
+        	document.getElementById('bg').src = 'strangeAnim/strangeanim' + 8 + '.PNG';
+        }
+        document.getElementById('x').innerHTML = "x: " + x;
+        document.getElementById('y').innerHTML = "y: " + y;
+        document.getElementById('dx').innerHTML = "diffx: " + diffx;
+        document.getElementById('dy').innerHTML = "diffy: " + diffy;
 
         console.log('x: ' + x + " " + "y: " + y);
         console.log('x - 366: ' + (x - 366) + ' ' + 'y - 226: ' + (y - 226));
