@@ -51,7 +51,7 @@ function magnify(imgID, zoom){
         y = e.pageY - a.top;
 
         diffx = x - 849;
-        diffy = y - 797;
+        diffy = y - 563;
         var rx = Math.abs(diffx / 94);
         var ry = Math.abs(diffy / 88);
         var i = Math.round((rx+ry)/2);
@@ -66,9 +66,10 @@ function magnify(imgID, zoom){
         document.getElementById('y').innerHTML = "y: " + y;
         document.getElementById('dx').innerHTML = "diffx: " + diffx;
         document.getElementById('dy').innerHTML = "diffy: " + diffy;
+        document.getElementById('i').innerHTML = "i: " + i;
 
         console.log('x: ' + x + " " + "y: " + y);
-        console.log('x - 366: ' + (x - 366) + ' ' + 'y - 226: ' + (y - 226));
+        console.log('x - 366: ' + (x - 849) + ' ' + 'y - 226: ' + (y - 527));
     /* Consider any page scrolling: */
         x = x - window.pageXOffset;
         y = y - window.pageYOffset;
