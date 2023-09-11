@@ -37,12 +37,38 @@
 
 	#panel{position: absolute;margin-top: -300px}
 
+    .slots{
+      width: 80px;
+      height: 80px;
+      padding-left: 10px;
+      background-repeat:no-repeat;
+            background-position: 50% 50%;
+            background-size: 80px;
+    }
+
+    #inventory{
+      background-color: black;
+      opacity: 0.7;
+      border: 2px solid black;
+      border-radius: 20px;
+      margin: auto;
+      margin-top: 800px;
+    }
 
  </style>
 
  <div class='img-magnifier-container'>
   <img src='strange.JPG' id='bg'></img>
  </div>
+
+    <table id='inventory'>
+      <tr>
+        <td id='slot0' class='slots'></td>
+        <td id='slot1' class='slots'></td>
+        <td id='slot2' class='slots'></td>
+        <td id='slot3' class='slots'></td>
+      </tr>
+    </table>
 
   <script type="text/javascript" src='2.js'></script>
 </body>

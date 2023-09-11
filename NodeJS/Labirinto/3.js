@@ -1,5 +1,13 @@
+var chestclick = 0;
 function openChest(){
- document.getElementById('chest').style.backgroundImage = "url('chestOpen.PNG')";
+ chestclick++;
+ document.getElementById('chest').style.backgroundImage = "url('chestOpenwh.PNG')";
+ if(chestclick == 1){
+  document.getElementById('chest').style.backgroundImage = "url('chestOpen.PNG')";
+  document.getElementById('chest').classList.remove("chest");
+ }
+ 
+
 }
 
 function playAxe(){
@@ -11,4 +19,6 @@ function playAxe(){
 		document.getElementById('axeimg').src='axeAnim/axeAnim' + i + '.PNG';
 		if(i == 9){clearInterval(anim);}
 	},50);
+	document.getElementById('axe').style.display = 'none';
+
 }

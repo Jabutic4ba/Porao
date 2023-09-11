@@ -21,19 +21,19 @@
     width: 200px;
     height: 200px;
     margin-left: 1130px;
-    margin-top: 490px;
+    margin-top: -276px;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(chestClosed.PNG);
   }
 
-  #chest:hover{
+  .chest:hover{
   	cursor:pointer;
   }
 
   #axe{
-    margin-left: -4px;
-    margin-top: 50px;
+    width: 290px;
+    height: 100px;
     position: absolute;
     width: 290px;
     height: 100px;
@@ -47,9 +47,34 @@
   	position: absolute;
   	margin-top: 150px;
   }
+
+
+  #pedacoMesa{
+    position: absolute;
+    margin-top: 247px;
+    margin-left: -13px
+  }
+
+    .slots{
+      width: 80px;
+      height: 80px;
+      padding-left: 10px;
+      background-repeat:no-repeat;
+            background-position: 50% 50%;
+            background-size: 80px;
+    }
+
+    #inventory{
+      background-color: black;
+      opacity: 0.7;
+      border: 2px solid black;
+      border-radius: 20px;
+      margin: auto;
+      margin-top: 800px;
+    }
  </style>
 
- <div id='chest' onClick='openChest()'>
+ <div id='chest' class='chest' onClick='openChest()'>
  	
  </div>
 
@@ -58,6 +83,18 @@
   <div id='axe' onClick='playAxe()'></div>
   <img id='axeimg' src='axeAnim/axeAnim0.PNG'>
  </div>
+
+ <img id='pedacoMesa' src='pedacoMesa.PNG'>
+
+    <table id='inventory'>
+      <tr>
+        <td id='slot0' class='slots'></td>
+        <td id='slot1' class='slots'></td>
+        <td id='slot2' class='slots'></td>
+        <td id='slot3' class='slots'></td>
+      </tr>
+    </table>
+
 
  <script type="text/javascript" src='3.js'></script>
 </body>
