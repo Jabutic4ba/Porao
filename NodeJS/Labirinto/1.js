@@ -65,5 +65,5 @@ function lAction(index){
 function takeKey(){
 	document.getElementById('key').style.display = 'none'
 	document.getElementsByClassName('slots')[0].style.backgroundImage = "url('key.PNG')";
-
+    
 }
