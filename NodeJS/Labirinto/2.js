@@ -83,8 +83,3 @@ magnify("bg", 3);
 
 
 
-/*switch(diffx){
- case (diffx <= 38 || diffx >= -38) && (diffy <= 25 || diffy >= -25):
- 	document.getElementById('bg').src = 'strangeAnim/strangeAnim8'
-
-}*/
