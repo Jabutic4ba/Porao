@@ -17,15 +17,15 @@ function encaralha(k){
  var desKey = [];
  for(var i = 0; i < arr.length;i++){
 
-    rand = Math.round(Math.random() * arr.length -1);
+   rand = Math.round(Math.random() * arr.length -1);
 
-	while(desKey.indexOf(rand) != -1){
-		rand = Math.round(Math.random() * arr.length -1);
-		if(arr.length == 0){break;}
-	}
+   while(desKey.indexOf(rand) != -1){
+    rand = Math.round(Math.random() * arr.length -1);
+    if(arr.length == 0){break;}
+   }
 	
-    encaralhado[0] += arr[rand];
-	desKey.push(rand);
+   encaralhado[0] += arr[rand];
+   desKey.push(rand);
 
  }
  encaralhado[1] = desKey;
