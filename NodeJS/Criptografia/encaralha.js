@@ -10,6 +10,7 @@ class Encaralhador{
   var encaralhado = ['',''];
   var arr = [];
 
+
   for(var x of this.txt.entries()){
  	arr.push(String.fromCharCode(x[1]));
 
@@ -25,9 +26,17 @@ class Encaralhador{
 		rand = Math.round(Math.random() * (arr.length-1));
 		if(arr.length == 0){break;}
 	}
+
+   rand = Math.round(Math.random() * arr.length -1);
+
+   while(desKey.indexOf(rand) != -1){
+    rand = Math.round(Math.random() * arr.length -1);
+    if(arr.length == 0){break;}
+   }
+
 	
-    encaralhado[0] += arr[rand];
-	desKey.push(rand);
+   encaralhado[0] += arr[rand];
+   desKey.push(rand);
 
   }
   encaralhado[1] = desKey;
