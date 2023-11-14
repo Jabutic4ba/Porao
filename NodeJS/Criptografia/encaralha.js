@@ -1,8 +1,11 @@
 //Algoritmo de criptografia que embaralha o texto
+const fs = require('fs');
+
 
 class Encaralhador{
- constructor(txt){
+ constructor(txt, name){
   this.txt = Buffer.from(txt);
+  this.name = name;
  }
 
  Encaralha(type){
@@ -34,37 +37,37 @@ class Encaralhador{
   }
   encaralhado[1] = desKey;
   for(let x in desKey){
-  	console.log(desKey[x].toString(16));
   	deskeyHEX += x == desKey.length-1 ? desKey[x].toString(16) : desKey[x].toString(16) + '-';
   }
-  console.log(deskeyHEX);
+
   if(type == 'hex'){
    console.log('Texto: ' + Buffer.from(encaralhado[0]).toString('hex') + ' || ' + ' Chave: ' + encaralhado[1] + '\nChaveHEX: ' + deskeyHEX);
+   encaralhado[0] = Buffer.from(encaralhado[0]).toString('hex')
   }
   else{
   	console.log('Texto: ' + encaralhado[0] + ' || ' + ' Chave: ' + encaralhado[1]);
   }
+
+  const obj = {plainText: this.txt.toString(), crypt: encaralhado[0], key: deskeyHEX, format: type};
+  const json = JSON.stringify(obj);
+  fs.writeFileSync(this.name + '.json', json);
  }
 
- Desencaralha(text, chave, type, s){
+ Desencaralha(s){
+  const keyInfo = JSON.parse(fs.readFileSync(this.name + '.json', 'utf8'));
+  keyInfo.key = keyInfo.key.split('-');
   var desentxt = '';
-  if(type == 'hex'){
+  if(keyInfo.format == 'hex'){
   	var z = [];
   	var endtxt = []
-  	for(var i = 0; i < text.length;i+=2){
-  		z.push(text.substr(i, 2));
+  	for(var i = 0; i < keyInfo.crypt.length;i+=2){
+  		z.push(keyInfo.crypt.substr(i, 2));
   	}
-  	if(typeof chave != 'object'){
-  	    chave = chave.split('-');
-  	    for(var q = 0;q < z.length;q++){
-  	    	endtxt[parseInt(chave[q], 16)] = z[q];
-  	    }
+
+  	for(var q = 0;q < z.length;q++){
+  	    endtxt[parseInt(keyInfo.key[q], 16)] = z[q];
+
   	}
-  	else{
-    	for(var q = 0;q < z.length;q++){
-    		endtxt[chave[q]] = z[q];
-  		}
-    }
 
     if(s == 'utf-8'){
     	for(var i = 0;i < z.length;i++){
@@ -78,13 +81,11 @@ class Encaralhador{
    }
   }
   else{
-   var t = Buffer.from(text);
-
+   var t = Buffer.from(keyInfo.crypt);
    const d = [];
 
    for(var x of t.entries()){
-     console.log(x);
-     d[chave[x[0]]] = String.fromCharCode(x[1]);
+     d[parseInt(keyInfo.key[x[0]], 16)] = String.fromCharCode(x[1]);
    
    }
    for(var i = 0;i<d.length;i++){
@@ -97,12 +98,10 @@ class Encaralhador{
 
 }
 
-var key = new Encaralhador('Tava no fluxo e avistei a menina no grau');
-var key2 = new Encaralhador('mi primera chamba');
+var key = new Encaralhador('Tava no fluxo e avistei a menina no grau', 'grau');
+var key2 = new Encaralhador('mi primera chamba', 'chamba');
 
-//key.Encaralha();
-//key.Desencaralha('ensua rofoat  Tgnoinv amiela na  vxiea u', [27,33,19,10,3,25,37,12,8,6,38,20,35,4,0,36,5,34,29,28,17,7,16,26,18,14,9,31,32,30,24,23,15,2,11,22,21,1,13,39]);
 //key2.Encaralha('hex');
-key2.Desencaralha('6168616d6d72622020617063696d696572', '9-c-d-e-6-8-f-a-2-10-3-b-5-0-1-7-4', 'hex', 'utf-8' );
+key2.Desencaralha('utf-8');
 
-//Investigar Buffer.swap16() Buffer.swap32() Buffer.swap64()
+
