@@ -1,11 +1,10 @@
 //Algoritmo de criptografia que embaralha o texto
 const fs = require('fs');
-
+const readline = require('node:readline');
 
 class Encaralhador{
- constructor(txt, name){
+ constructor(txt){
   this.txt = Buffer.from(txt);
-  this.name = name;
  }
 
  Encaralha(type){
@@ -18,7 +17,7 @@ class Encaralhador{
  	arr.push(String.fromCharCode(x[1]));
 
   }
-
+  
 
   const desKey = [];
   let deskeyHEX = '';
@@ -41,20 +40,20 @@ class Encaralhador{
   }
 
   if(type == 'hex'){
-   console.log('Texto: ' + Buffer.from(encaralhado[0]).toString('hex') + ' || ' + ' Chave: ' + encaralhado[1] + '\nChaveHEX: ' + deskeyHEX);
+   console.log('Texto: ' + Buffer.from(encaralhado[0]).toString('hex'));
    encaralhado[0] = Buffer.from(encaralhado[0]).toString('hex')
   }
   else{
-  	console.log('Texto: ' + encaralhado[0] + ' || ' + ' Chave: ' + encaralhado[1]);
+  	console.log('Texto: ' + encaralhado[0]);
   }
 
   const obj = {plainText: this.txt.toString(), crypt: encaralhado[0], key: deskeyHEX, format: type};
   const json = JSON.stringify(obj);
-  fs.writeFileSync(this.name + '.json', json);
+  fs.writeFileSync(deskeyHEX + '.json', json);
  }
 
- Desencaralha(s){
-  const keyInfo = JSON.parse(fs.readFileSync(this.name + '.json', 'utf8'));
+ Desencaralha(s, key){
+  const keyInfo = JSON.parse(fs.readFileSync(key + '.json', 'utf8'));
   keyInfo.key = keyInfo.key.split('-');
   var desentxt = '';
   if(keyInfo.format == 'hex'){
@@ -98,10 +97,49 @@ class Encaralhador{
 
 }
 
-var key = new Encaralhador('Tava no fluxo e avistei a menina no grau', 'grau');
-var key2 = new Encaralhador('mi primera chamba', 'chamba');
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
 
-//key2.Encaralha('hex');
-key2.Desencaralha('utf-8');
+var resposta;
+
+rl.question("O que quer fazer? \n 1.Criptografar um texto \n 2.Descriptografar um texto \n", r => {
+    resposta = r;
+	if(r == 1){
+     rl.question("Digite o texto \n", texto => {
+      rl.question("Como deseja a saída? \n 1.Utf-8 \n 2.Hexadecimal\n", r2 => {
+       if(r2 == 1){
+        const key = new Encaralhador(texto);
+        key.Encaralha('utf-8');
+        rl.close();
+       }
+       else if(r2 == 2){
+        const key = new Encaralhador(texto);
+        key.Encaralha('hex');
+        rl.close();
+       }
+      });
+     });	
+	}
+	else if(r == 2){
+      rl.question("Digite o texto criptografado\n", textoCript => {
+       rl.question("Digite a chave\n", chave => {
+        const keyInfo = JSON.parse(fs.readFileSync(chave + '.json'));
+        const key = new Encaralhador(keyInfo.plainText);
+        rl.question("Como deseja a saída?\n 1.Utf-8 \n 2.Hexadecimal\n", r2 =>{
+         if(r2 == 1){
+          key.Desencaralha('utf-8', chave);
+          rl.close();
+         }
+         else if(r2 == 2){
+          key.Desencaralha('hex', chave);
+          rl.close();	
+         }
+        });
+       });
+      });	    
+	}
+});
 
 
